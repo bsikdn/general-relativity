@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Relativity Lab & Star Map</title>
+</head>
+<body>
+
+    <center>
+        <marquee scrollamount="5">🚀 Now passing the Oort Cloud... 🌌 Heading towards Alpha Centauri... 🛰️</marquee>
+        <h1>🌌 The Relativity & Astronomy Lab</h1>
+        
+        <img src="image.jpg" alt="Albert Einstein" width="300" border="5">
+        
+        <p><i>"Imagination is more important than knowledge. For knowledge is limited."</i> — <b>Albert Einstein</b></p>
+    </center>
+
+    <hr>
+
+    <h3>Fundamental Equations</h3>
+    <p>The most famous equation in physics (Mass-Energy Equivalence):</p>
+    <p><big><b>E = mc<sup>2</sup></b></big></p>
+    
+    <p>The Lorentz factor for <u>Time Dilation</u>:</p>
+    <p>t' = t / √(1 - v<sup>2</sup>/c<sup>2</sup>)</p>
+
+    <hr>
+
+    <h3>Solar System Data Table</h3>
+    <table border="1" cellpadding="5">
+        <caption>Planetary Statistics & Gravity</caption>
+        <thead>
+            <tr>
+                <th>Body</th>
+                <th>Type</th>
+                <th>Gravity (m/s<sup>2</sup>)</th>
+                <th>Has Rings?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mercury</td>
+                <td>Terrestrial</td>
+                <td>3.7</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Venus</td>
+                <td>Terrestrial</td>
+                <td>8.87</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><mark>Earth</mark></td>
+                <td>Terrestrial</td>
+                <td>9.81</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Mars</td>
+                <td>Terrestrial</td>
+                <td>3.71</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Jupiter</td>
+                <td>Gas Giant</td>
+                <td>24.79</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Saturn</td>
+                <td>Gas Giant</td>
+                <td>10.44</td>
+                <td><big><b>Yes</b></big></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Relative Planet Size Visualization</h3>
+    <p>Visualizing diameter using Earth as the baseline (100%):</p>
+    
+    <label>Mercury:</label>
+    <progress value="38" max="100"></progress> 38%
+    <br>
+    
+    <label>Earth:</label>
+    <progress value="100" max="100"></progress> 100%
+    <br>
+    
+    <label>Jupiter:</label>
+    <progress value="100" max="100"></progress> (Off the charts! 1100%)
+    
+    <p><i>Note: The progress bar represents the ratio compared to Earth's size.</i></p>
+
+    <hr>
+
+    <h3>Time Dilation Simulator</h3>
+    <p>Travel at 90% the speed of light for 1 year. See what happens on Earth:</p>
+    
+    <button onclick="launchProbe()">Launch Space Probe</button>
+    <br><br>
+    <label>Warp Drive Charge:</label>
+    <progress id="warpDrive" value="0" max="100"></progress>
+
+    <dialog id="resultBox">
+        <h2>Mission Report</h2>
+        <p>Due to the Special Theory of <abbr title="Relativity">SR</abbr>,</p>
+        <p>While you felt like 1 year passed, Earth aged <b>2.29 years</b>.</p>
+        <p>Press <kbd>Esc</kbd> or the button below to return.</p>
+        <button onclick="document.getElementById('resultBox').close()">Return to Base</button>
+    </dialog>
+
+    <hr>
+
+    <h3>Star Map (Big Dipper)</h3>
+    <pre>
+       * (Dubhe)
+        \
+         * (Merak)
+          \
+           *----* (Phecda)
+          /    /
+    *----*----* (Alkaid)  (Megrez)
+    </pre>
+
+    <h3>Quick Space Facts</h3>
+    <dl>
+        <dt><b>Black Holes</b></dt>
+        <dd>A region of spacetime where gravity is so strong that nothing, including light, can escape.</dd>
+        
+        <dt><b>Light Year</b></dt>
+        <dd>The distance light travels in one Julian year (approx. 9.46 trillion km).</dd>
+    </dl>
+
+    <hr>
+
+    <p>Data provided by <abbr title="National Aeronautics and Space Administration">NASA</abbr>.</p>
+    <p><cite>Reference: "The Meaning of Relativity" by Albert Einstein (1922)</cite></p>
+
+    <script>
+        function launchProbe() {
+            var p = document.getElementById('warpDrive');
+            p.value = 0; // Reset
+            var interval = setInterval(function() {
+                if (p.value >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('resultBox').showModal();
+                } else {
+                    p.value += 5;
+                }
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>
